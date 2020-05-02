@@ -1,0 +1,27 @@
+h1 {
+  color: #2196F3;
+  text-align: center;
+  font-size: 60px;
+}
+
+body {
+	background-color:white;
+}
+
+table {
+	margin:auto;
+	width:50%;
+}
+
+input {
+	border-radius:6px;	
+}
+
+.loginButton {
+	margin-top:30px;
+	border-radius:5px;
+	text-align : center;
+	width:50%;
+	background-color:#2196F3;
+	height:35px;
+}

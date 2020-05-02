@@ -1,0 +1,50 @@
+nav {
+	position:sticky;
+	top:0px;
+	font-size: 22px;
+	font-style: italic;
+	font-weight: bold;
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+
+.navElement {
+	border:2px solid DodgerBlue;
+	background-color:white;
+	border-radius:5px;
+	margin:20px;
+	margin-top:0px;
+	padding:10px;
+	width:20%;
+}
+
+.btnAddToCart {
+	margin-top:30px;
+	border-radius:5px;
+	text-align : center;
+	width:150px;
+	background-color:#2196F3;
+	height:35px;
+}
+
+#idDisplayStore li {
+	color:red;
+}
+
+#idGroceryStoreMenu {
+	float:left;
+}
+
+#idGroceryStoreMenu button {
+	margin-top:30px;
+	border-radius:5px;
+	text-align : center;
+	width:150px;
+	background-color:#2196F3;
+	height:35px;
+}
+
+#idGroceryStoreMenu ul {
+	list-style-type:none;
+}
