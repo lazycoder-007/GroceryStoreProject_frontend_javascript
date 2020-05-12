@@ -1,4 +1,5 @@
 displayStoreInventory();
+var itemArray;
 
 function displayStoreInventory()
 {
@@ -8,14 +9,14 @@ function displayStoreInventory()
 		try
 		{
 			if (this.readyState == 4 && this.status == 200) {
-				var itemArray = JSON.parse(this.responseText);
+				itemArray = JSON.parse(this.responseText);
 				var list = "<ol id='itemList'>";
 				for(var i in itemArray)
 				{
-					var l = "<ul>" + 
+					var l = "<ul>" +
 						"<li>" + itemArray[i].brand + " : " + itemArray[i].category  + "</li>" +
 						"<li>" + "Price: " + itemArray[i].price + "</li>" +
-						"<button class=btnAddToCart onclick=addToCart()>Add to Cart</button><br><br>" + 
+						"<button class=btnAddToCart onclick=addToCart("+ i +")>Add to Cart</button><br><br>" +
 						"</ul>";
 					list += "<li>" + l + "</li><br><br>";
 				}
@@ -31,6 +32,11 @@ function displayStoreInventory()
 	xhttp.open("GET", groceryStoreUrl, true);
 	xhttp.setRequestHeader('Content-Type', 'application/json');
 	xhttp.send();
+}
+
+function addToCart(index)
+{
+	window.alert("Index : " + index);
 }
 
 function openGroceryStoreOptionsPage()
