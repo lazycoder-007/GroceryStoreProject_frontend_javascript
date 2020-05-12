@@ -37,7 +37,8 @@ function addItemToGorcery()
 				document.getElementById("idBrand").value="";
 				document.getElementById("idCategory").value="";
 				document.getElementById("idPrice").value="";
-				document.getElementById("idQuantity").value="";			
+				document.getElementById("idQuantity").value="";
+				window.alert("Item has been added to Grocery!!!");
 			}
 			else
 			{
