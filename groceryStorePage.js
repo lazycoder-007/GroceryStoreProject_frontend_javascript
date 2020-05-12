@@ -1,6 +1,6 @@
-function displayStoreInventory()
+function loadHomePage()
 {
-	location.assign("mainGroceryStorePage.html");
+	location.assign("homePage.html");
 }
 
 function logOut()
@@ -10,7 +10,7 @@ function logOut()
 
 function displayCart()
 {
-	
+	location.assign("cartOptions.html");
 }
 
 function addItemToGorcery()

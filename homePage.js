@@ -1,7 +1,6 @@
-displayStoreInventory();
-var itemArray;
+loadHomePage();
 
-function displayStoreInventory()
+function loadHomePage()
 {
 	var groceryStoreUrl = "http://127.0.0.1:8080/groceryStore";
 	var xhttp = new XMLHttpRequest();
@@ -9,14 +8,14 @@ function displayStoreInventory()
 		try
 		{
 			if (this.readyState == 4 && this.status == 200) {
-				itemArray = JSON.parse(this.responseText);
+				var itemArray = JSON.parse(this.responseText);
 				var list = "<ol id='itemList'>";
 				for(var i in itemArray)
 				{
-					var l = "<ul>" +
+					var l = "<ul>" + 
 						"<li>" + itemArray[i].brand + " : " + itemArray[i].category  + "</li>" +
 						"<li>" + "Price: " + itemArray[i].price + "</li>" +
-						"<button class=btnAddToCart onclick=addToCart("+ i +")>Add to Cart</button><br><br>" +
+						"<button class=classicButton onclick=addToCart("+ (Number(i)+1) +")>Add to Cart</button><br><br>" + 
 						"</ul>";
 					list += "<li>" + l + "</li><br><br>";
 				}
@@ -36,17 +35,33 @@ function displayStoreInventory()
 
 function addToCart(index)
 {
-	window.alert("Index : " + index);
+	var cartUrl = "http://127.0.0.1:8080/cart/" + index;
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		try
+		{
+			if (this.readyState == 4 && this.status == 200) {
+				window.alert("Successfully added to Cart");
+			}
+		}
+		catch(erMs)
+		{
+			window.alert(erMs);
+		}
+	};
+	xhttp.open("POST", cartUrl, true);
+	xhttp.setRequestHeader('Content-Type', 'application/json');
+	xhttp.send();
 }
 
-function openGroceryStoreOptionsPage()
+function openGroceryStorePage()
 {
-	location.assign("groceryStoreOptionsPage.html");	
+	location.assign("groceryStorePage.html");	
 }
 
 function displayCart()
 {
-	
+	location.assign("cartOptions.html");
 }
 
 function logOut()

@@ -19,7 +19,7 @@ function login()
 		{
 			if(this.status == 200)
 			{
-				location.replace("mainGroceryStorePage.html");				
+				location.replace("homePage.html");				
 			}
 			else
 			{

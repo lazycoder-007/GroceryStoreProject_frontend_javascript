@@ -19,7 +19,7 @@ nav {
 	width:20%;
 }
 
-.btnAddToCart {
+.classicButton {
 	margin-top:30px;
 	border-radius:5px;
 	text-align : center;
@@ -28,7 +28,7 @@ nav {
 	height:35px;
 }
 
-#idDisplayStore li {
+#itemList {
 	color:red;
 }
 
@@ -47,4 +47,9 @@ nav {
 
 #idGroceryStoreMenu ul {
 	list-style-type:none;
+}
+
+.selected {
+	color:white;
+	background-color:#2196F3;
 }
